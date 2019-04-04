@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import swInterface.MainApp;
+import swShips.BattleStar;
 import swShips.MasterShip;
 import swShips.Spaceship;
 
@@ -22,10 +23,30 @@ public class GameData {
 			grid[i] = null;
 		}
 		player = new MasterShip();
+		enemies = new ArrayList<Spaceship>();
 		gameOver = false;
 		usersGo = true;
 		initialLocationGenerator(player);
 		System.out.println(player.getCurrentLocation());
+		MainApp.mapButtonGrid(grid);
+	}
+	
+	public static void randomEnemyShip() {
+		int possibleEnemy = 3; // i.e. one in three chance of spawning enemy
+		Random numGenerator = new Random();
+		int randNumber = numGenerator.nextInt(possibleEnemy);
+		if(randNumber == 0)
+			spawnEnemyShip();
+	}
+	
+	public static void spawnEnemyShip() {
+		int typesOfShip = 3; 
+		//Random numGenerator = new Random();
+		//int randNumber = numGenerator.nextInt(typesOfShip);
+		int randNumber = 1;
+		if(randNumber == 1) {
+			enemies.add(new BattleStar(grid));
+		}
 		MainApp.mapButtonGrid(grid);
 	}
 	

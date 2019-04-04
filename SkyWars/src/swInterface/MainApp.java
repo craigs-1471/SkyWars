@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 import swGameMechanics.GameData;
 import swGameMechanics.PossibleMoves;
+import swShips.BattleStar;
 import swShips.MasterShip;
 import swShips.Spaceship;
 
@@ -99,6 +100,8 @@ public class MainApp {
 			btn.setBackgroundNull();
 		if(ship instanceof MasterShip)
 			btn.setBackgroundXWing();
+		if(ship instanceof BattleStar)
+			btn.setBackgroundBattleStar();
 	}
 
 	/**

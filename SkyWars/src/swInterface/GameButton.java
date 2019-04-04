@@ -14,19 +14,23 @@ import swShips.Spaceship;
 
 public class GameButton extends JButton implements ActionListener {
 	
-	private ImageIcon xWing;
+	private ImageIcon xWing, battleStar;
 	private int btnIndex;
 	private ArrayList<Integer> possibleMoves;
 	private boolean movePossible;
 	
 	public GameButton(int index, ArrayList<Integer> moves) {
 		xWing = new ImageIcon(this.getClass().getResource("/swResources/x-wing100.png"));
+		battleStar = new ImageIcon(this.getClass().getResource("/swResources/tieFighter.png"));
 		setBtnIndex(index);
 		setPossibleMoves(moves);
 		addActionListener(this);
 	}
 	public void setBackgroundXWing() {
 		setIcon(xWing);
+	}
+	public void setBackgroundBattleStar() {
+		setIcon(battleStar);
 	}
 	public void setBackgroundNull() {
 		setIcon(null);
@@ -45,6 +49,7 @@ public class GameButton extends JButton implements ActionListener {
 			//setBackgroundXWing();
 			ChangeButtonImage.changeBtnNull(currentLocation);
 			GameData.getPlayer().setCurrentLocation(btnIndex);
+			GameData.randomEnemyShip();
 		}
 	}
 
