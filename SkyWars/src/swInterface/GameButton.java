@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import swGameMechanics.ChangeButtonImage;
 import swGameMechanics.GameData;
 import swGameMechanics.MoveVerification;
 import swShips.Spaceship;
@@ -42,7 +43,7 @@ public class GameButton extends JButton implements ActionListener {
 			GameData.setGrid(grid);
 			MainApp.mapButtonGrid(grid);
 			//setBackgroundXWing();
-			//ChangeButtonImage.changeBtnNull(currentLocation);
+			ChangeButtonImage.changeBtnNull(currentLocation);
 			GameData.getPlayer().setCurrentLocation(btnIndex);
 		}
 	}

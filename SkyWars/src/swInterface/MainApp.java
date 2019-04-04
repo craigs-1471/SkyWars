@@ -177,4 +177,141 @@ public class MainApp {
 		btnNewGame.setBounds(12, 13, 97, 25);
 		pnlOptions.add(btnNewGame);
 	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public static GameButton getBtnGameButton0() {
+		return btnGameButton0;
+	}
+
+	public static void setBtnGameButton0(GameButton btnGameButton0) {
+		MainApp.btnGameButton0 = btnGameButton0;
+	}
+
+	public static GameButton getBtnGameButton1() {
+		return btnGameButton1;
+	}
+
+	public static void setBtnGameButton1(GameButton btnGameButton1) {
+		MainApp.btnGameButton1 = btnGameButton1;
+	}
+
+	public static GameButton getBtnGameButton2() {
+		return btnGameButton2;
+	}
+
+	public static void setBtnGameButton2(GameButton btnGameButton2) {
+		MainApp.btnGameButton2 = btnGameButton2;
+	}
+
+	public static GameButton getBtnGameButton3() {
+		return btnGameButton3;
+	}
+
+	public static void setBtnGameButton3(GameButton btnGameButton3) {
+		MainApp.btnGameButton3 = btnGameButton3;
+	}
+
+	public static GameButton getBtnGameButton4() {
+		return btnGameButton4;
+	}
+
+	public static void setBtnGameButton4(GameButton btnGameButton4) {
+		MainApp.btnGameButton4 = btnGameButton4;
+	}
+
+	public static GameButton getBtnGameButton5() {
+		return btnGameButton5;
+	}
+
+	public static void setBtnGameButton5(GameButton btnGameButton5) {
+		MainApp.btnGameButton5 = btnGameButton5;
+	}
+
+	public static GameButton getBtnGameButton6() {
+		return btnGameButton6;
+	}
+
+	public static void setBtnGameButton6(GameButton btnGameButton6) {
+		MainApp.btnGameButton6 = btnGameButton6;
+	}
+
+	public static GameButton getBtnGameButton7() {
+		return btnGameButton7;
+	}
+
+	public static void setBtnGameButton7(GameButton btnGameButton7) {
+		MainApp.btnGameButton7 = btnGameButton7;
+	}
+
+	public static GameButton getBtnGameButton8() {
+		return btnGameButton8;
+	}
+
+	public static void setBtnGameButton8(GameButton btnGameButton8) {
+		MainApp.btnGameButton8 = btnGameButton8;
+	}
+
+	public static GameButton getBtnGameButton9() {
+		return btnGameButton9;
+	}
+
+	public static void setBtnGameButton9(GameButton btnGameButton9) {
+		MainApp.btnGameButton9 = btnGameButton9;
+	}
+
+	public static GameButton getBtnGameButton10() {
+		return btnGameButton10;
+	}
+
+	public static void setBtnGameButton10(GameButton btnGameButton10) {
+		MainApp.btnGameButton10 = btnGameButton10;
+	}
+
+	public static GameButton getBtnGameButton11() {
+		return btnGameButton11;
+	}
+
+	public static void setBtnGameButton11(GameButton btnGameButton11) {
+		MainApp.btnGameButton11 = btnGameButton11;
+	}
+
+	public static GameButton getBtnGameButton12() {
+		return btnGameButton12;
+	}
+
+	public static void setBtnGameButton12(GameButton btnGameButton12) {
+		MainApp.btnGameButton12 = btnGameButton12;
+	}
+
+	public static GameButton getBtnGameButton13() {
+		return btnGameButton13;
+	}
+
+	public static void setBtnGameButton13(GameButton btnGameButton13) {
+		MainApp.btnGameButton13 = btnGameButton13;
+	}
+
+	public static GameButton getBtnGameButton14() {
+		return btnGameButton14;
+	}
+
+	public static void setBtnGameButton14(GameButton btnGameButton14) {
+		MainApp.btnGameButton14 = btnGameButton14;
+	}
+
+	public static GameButton getBtnGameButton15() {
+		return btnGameButton15;
+	}
+
+	public static void setBtnGameButton15(GameButton btnGameButton15) {
+		MainApp.btnGameButton15 = btnGameButton15;
+	}
+	
 }
