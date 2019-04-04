@@ -23,9 +23,10 @@ public class GameData {
 		}
 		player = new MasterShip();
 		gameOver = false;
-		initialLocationGenerator(player);
-		//MainApp.mapButtonGrid(grid);
 		usersGo = true;
+		initialLocationGenerator(player);
+		System.out.println(player.getCurrentLocation());
+		MainApp.mapButtonGrid(grid);
 	}
 	
 	public static void initialLocationGenerator(Spaceship player) {

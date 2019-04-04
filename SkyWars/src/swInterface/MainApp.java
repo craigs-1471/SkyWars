@@ -5,11 +5,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import swGameMechanics.GameData;
 import swGameMechanics.PossibleMoves;
+import swShips.MasterShip;
+import swShips.Spaceship;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainApp {
 
@@ -56,37 +61,37 @@ public class MainApp {
 	
 	public static void mapButtonGrid(Spaceship[] grid) {
 		if(grid[0] != null)
-			renderButtonGrid(btnGameButton1, grid[0]);
+			renderButtonGrid(btnGameButton0, grid[0]);
 		if(grid[1] != null)
-			renderButtonGrid(btnGameButton2, grid[1]);
+			renderButtonGrid(btnGameButton1, grid[1]);
 		if(grid[2] != null)
-			renderButtonGrid(btnGameButton3, grid[2]);
+			renderButtonGrid(btnGameButton2, grid[2]);
 		if(grid[3] != null)
-			renderButtonGrid(btnGameButton4, grid[3]);
+			renderButtonGrid(btnGameButton3, grid[3]);
 		if(grid[4] != null)
-			renderButtonGrid(btnGameButton5, grid[4]);
+			renderButtonGrid(btnGameButton4, grid[4]);
 		if(grid[5] != null)
-			renderButtonGrid(btnGameButton6, grid[5]);
+			renderButtonGrid(btnGameButton5, grid[5]);
 		if(grid[6] != null)
-			renderButtonGrid(btnGameButton7, grid[6]);
+			renderButtonGrid(btnGameButton6, grid[6]);
 		if(grid[7] != null)
-			renderButtonGrid(btnGameButton8, grid[7]);
+			renderButtonGrid(btnGameButton7, grid[7]);
 		if(grid[8] != null)
-			renderButtonGrid(btnGameButton9, grid[8]);
+			renderButtonGrid(btnGameButton8, grid[8]);
 		if(grid[9] != null)
-			renderButtonGrid(btnGameButton10, grid[9]);
+			renderButtonGrid(btnGameButton9, grid[9]);
 		if(grid[10] != null)
-			renderButtonGrid(btnGameButton11, grid[10]);
+			renderButtonGrid(btnGameButton10, grid[10]);
 		if(grid[11] != null)
-			renderButtonGrid(btnGameButton12, grid[11]);
+			renderButtonGrid(btnGameButton11, grid[11]);
 		if(grid[12] != null)
-			renderButtonGrid(btnGameButton13, grid[12]);
+			renderButtonGrid(btnGameButton12, grid[12]);
 		if(grid[13] != null)
-			renderButtonGrid(btnGameButton14, grid[13]);
+			renderButtonGrid(btnGameButton13, grid[13]);
 		if(grid[14] != null)
-			renderButtonGrid(btnGameButton15, grid[14]);
+			renderButtonGrid(btnGameButton14, grid[14]);
 		if(grid[15] != null)
-			renderButtonGrid(btnGameButton16, grid[15]);
+			renderButtonGrid(btnGameButton15, grid[15]);
 	}
 	
 	public static void renderButtonGrid(GameButton btn, Spaceship ship) {
@@ -94,8 +99,6 @@ public class MainApp {
 			btn.setBackgroundNull();
 		if(ship instanceof MasterShip)
 			btn.setBackgroundXWing();
-		if(ship instanceof TieFighter)
-			btn.setBackgroundTieFighter();
 	}
 
 	/**
@@ -165,8 +168,13 @@ public class MainApp {
 		frame.getContentPane().add(pnlOptions);
 		pnlOptions.setLayout(null);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(12, 13, 97, 25);
-		pnlOptions.add(btnNewButton);
+		JButton btnNewGame = new JButton("New Game");
+		btnNewGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GameData.playGame();
+			}
+		});
+		btnNewGame.setBounds(12, 13, 97, 25);
+		pnlOptions.add(btnNewGame);
 	}
 }
