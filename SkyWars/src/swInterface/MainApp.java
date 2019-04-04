@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import swGameMechanics.PossibleMoves;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
@@ -11,6 +14,22 @@ import javax.swing.JButton;
 public class MainApp {
 
 	private JFrame frame;
+	private static GameButton btnGameButton0;
+	private static GameButton btnGameButton1;
+	private static GameButton btnGameButton2;
+	private static GameButton btnGameButton3;
+	private static GameButton btnGameButton4;
+	private static GameButton btnGameButton5;
+	private static GameButton btnGameButton6;
+	private static GameButton btnGameButton7;
+	private static GameButton btnGameButton8;
+	private static GameButton btnGameButton9;
+	private static GameButton btnGameButton10;
+	private static GameButton btnGameButton11;
+	private static GameButton btnGameButton12;
+	private static GameButton btnGameButton13;
+	private static GameButton btnGameButton14;
+	private static GameButton btnGameButton15;
 
 	/**
 	 * Launch the application.
@@ -34,6 +53,50 @@ public class MainApp {
 	public MainApp() {
 		initialize();
 	}
+	
+	public static void mapButtonGrid(Spaceship[] grid) {
+		if(grid[0] != null)
+			renderButtonGrid(btnGameButton1, grid[0]);
+		if(grid[1] != null)
+			renderButtonGrid(btnGameButton2, grid[1]);
+		if(grid[2] != null)
+			renderButtonGrid(btnGameButton3, grid[2]);
+		if(grid[3] != null)
+			renderButtonGrid(btnGameButton4, grid[3]);
+		if(grid[4] != null)
+			renderButtonGrid(btnGameButton5, grid[4]);
+		if(grid[5] != null)
+			renderButtonGrid(btnGameButton6, grid[5]);
+		if(grid[6] != null)
+			renderButtonGrid(btnGameButton7, grid[6]);
+		if(grid[7] != null)
+			renderButtonGrid(btnGameButton8, grid[7]);
+		if(grid[8] != null)
+			renderButtonGrid(btnGameButton9, grid[8]);
+		if(grid[9] != null)
+			renderButtonGrid(btnGameButton10, grid[9]);
+		if(grid[10] != null)
+			renderButtonGrid(btnGameButton11, grid[10]);
+		if(grid[11] != null)
+			renderButtonGrid(btnGameButton12, grid[11]);
+		if(grid[12] != null)
+			renderButtonGrid(btnGameButton13, grid[12]);
+		if(grid[13] != null)
+			renderButtonGrid(btnGameButton14, grid[13]);
+		if(grid[14] != null)
+			renderButtonGrid(btnGameButton15, grid[14]);
+		if(grid[15] != null)
+			renderButtonGrid(btnGameButton16, grid[15]);
+	}
+	
+	public static void renderButtonGrid(GameButton btn, Spaceship ship) {
+		if(ship == null)
+			btn.setBackgroundNull();
+		if(ship instanceof MasterShip)
+			btn.setBackgroundXWing();
+		if(ship instanceof TieFighter)
+			btn.setBackgroundTieFighter();
+	}
 
 	/**
 	 * Initialize the contents of the frame.
@@ -44,66 +107,66 @@ public class MainApp {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(12, 13, 507, 286);
-		frame.getContentPane().add(panel);
-		panel.setLayout(new GridLayout(4, 4, 0, 0));
+		JPanel pnlButtonPanel = new JPanel();
+		pnlButtonPanel.setBounds(12, 13, 507, 286);
+		frame.getContentPane().add(pnlButtonPanel);
+		pnlButtonPanel.setLayout(new GridLayout(4, 4, 0, 0));
 		
-		JButton btnGameButton0 = new JButton("New button");
-		panel.add(btnGameButton0);
+		btnGameButton0 = new GameButton(0, PossibleMoves.getBtn0Moves());
+		pnlButtonPanel.add(btnGameButton0);
 		
-		JButton btnGameButton1 = new JButton("New button");
-		panel.add(btnGameButton1);
+		btnGameButton1 = new GameButton(1, PossibleMoves.getBtn1Moves());
+		pnlButtonPanel.add(btnGameButton1);
 		
-		JButton btnGameButton2 = new JButton("New button");
-		panel.add(btnGameButton2);
+		btnGameButton2 = new GameButton(2, PossibleMoves.getBtn2Moves());
+		pnlButtonPanel.add(btnGameButton2);
 		
-		JButton btnGameButton3 = new JButton("New button");
-		panel.add(btnGameButton3);
+		btnGameButton3 = new GameButton(3, PossibleMoves.getBtn3Moves());
+		pnlButtonPanel.add(btnGameButton3);
 		
-		JButton btnGameButton4 = new JButton("New button");
-		panel.add(btnGameButton4);
+		btnGameButton4 = new GameButton(4, PossibleMoves.getBtn4Moves());
+		pnlButtonPanel.add(btnGameButton4);
 		
-		JButton btnGameButton5 = new JButton("New button");
-		panel.add(btnGameButton5);
+		btnGameButton5 = new GameButton(5, PossibleMoves.getBtn5Moves());
+		pnlButtonPanel.add(btnGameButton5);
 		
-		JButton btnGameButton6 = new JButton("New button");
-		panel.add(btnGameButton6);
+		btnGameButton6 = new GameButton(6, PossibleMoves.getBtn6Moves());
+		pnlButtonPanel.add(btnGameButton6);
 		
-		JButton btnGameButton7 = new JButton("New button");
-		panel.add(btnGameButton7);
+		btnGameButton7 = new GameButton(7, PossibleMoves.getBtn7Moves());
+		pnlButtonPanel.add(btnGameButton7);
 		
-		JButton btnGameButton8 = new JButton("New button");
-		panel.add(btnGameButton8);
+		btnGameButton8 = new GameButton(8, PossibleMoves.getBtn8Moves());
+		pnlButtonPanel.add(btnGameButton8);
 		
-		JButton btnGameButton9 = new JButton("New button");
-		panel.add(btnGameButton9);
+		btnGameButton9 = new GameButton(9, PossibleMoves.getBtn9Moves());
+		pnlButtonPanel.add(btnGameButton9);
 		
-		JButton btnGameButton10 = new JButton("New button");
-		panel.add(btnGameButton10);
+		btnGameButton10 = new GameButton(10, PossibleMoves.getBtn10Moves());
+		pnlButtonPanel.add(btnGameButton10);
 		
-		JButton btnGameButton11 = new JButton("New button");
-		panel.add(btnGameButton11);
+		btnGameButton11 = new GameButton(11, PossibleMoves.getBtn11Moves());
+		pnlButtonPanel.add(btnGameButton11);
 		
-		JButton btnGameButton12 = new JButton("New button");
-		panel.add(btnGameButton12);
+		btnGameButton12 = new GameButton(12, PossibleMoves.getBtn12Moves());
+		pnlButtonPanel.add(btnGameButton12);
 		
-		JButton btnGameButton13 = new JButton("New button");
-		panel.add(btnGameButton13);
+		btnGameButton13 = new GameButton(13, PossibleMoves.getBtn13Moves());
+		pnlButtonPanel.add(btnGameButton13);
 		
-		JButton btnGameButton14 = new JButton("New button");
-		panel.add(btnGameButton14);
+		btnGameButton14 = new GameButton(14, PossibleMoves.getBtn14Moves());
+		pnlButtonPanel.add(btnGameButton14);
 		
-		JButton btnGameButton15 = new JButton("New button");
-		panel.add(btnGameButton15);
+		btnGameButton15 = new GameButton(15, PossibleMoves.getBtn15Moves());
+		pnlButtonPanel.add(btnGameButton15);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(12, 300, 507, 48);
-		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(null);
+		JPanel pnlOptions = new JPanel();
+		pnlOptions.setBounds(12, 300, 507, 48);
+		frame.getContentPane().add(pnlOptions);
+		pnlOptions.setLayout(null);
 		
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.setBounds(12, 13, 97, 25);
-		panel_1.add(btnNewButton);
+		pnlOptions.add(btnNewButton);
 	}
 }

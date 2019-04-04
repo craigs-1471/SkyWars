@@ -3,6 +3,8 @@ package swGameMechanics;
 import java.util.ArrayList;
 import java.util.Random;
 
+import swInterface.MainApp;
+import swShips.MasterShip;
 import swShips.Spaceship;
 
 public class GameData {
@@ -22,7 +24,7 @@ public class GameData {
 		player = new MasterShip();
 		gameOver = false;
 		initialLocationGenerator(player);
-		MainApp.mapButtonGrid(grid);
+		//MainApp.mapButtonGrid(grid);
 		usersGo = true;
 	}
 	

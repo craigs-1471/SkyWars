@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import swGameMechanics.GameData;
+import swGameMechanics.MoveVerification;
+
 public class GameButton extends JButton implements ActionListener {
 	
 	private ImageIcon xWing, deathStar, battleCruiser, tieFighter;
@@ -15,17 +18,26 @@ public class GameButton extends JButton implements ActionListener {
 	private boolean movePossible;
 	
 	public GameButton(int index, ArrayList<Integer> moves) {
-		xWing = new ImageIcon(this.getClass().getResource("/resources/x-wing100.png"));
-		tieFighter = new ImageIcon(this.getClass().getResource("/resources/tieFighter.png"));
+		xWing = new ImageIcon(this.getClass().getResource("/swResources/x-wing100.png"));
+		tieFighter = new ImageIcon(this.getClass().getResource("/swResources/tieFighter.png"));
 		setBtnIndex(index);
 		setPossibleMoves(moves);
 		addActionListener(this);
+	}
+	public void setBackgroundXWing() {
+		setIcon(xWing);
+	}
+	public void setBackgroundTieFighter() {
+		setIcon(tieFighter);
+	}
+	public void setBackgroundNull() {
+		setIcon(null);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		int currentLocation = GameData.getPlayer().getCurrentLocation();
-		movePossible = moveVerification.isMovePossible(currentLocation, possibleMoves);
+		movePossible = MoveVerification.isMovePossible(currentLocation, possibleMoves);
 		if(GameData.isUsersGo() && movePossible) {
 			//Spaceship[] grid = GameData.getGrid();
 			//grid[currentLocation] = null;
@@ -33,7 +45,7 @@ public class GameButton extends JButton implements ActionListener {
 			//GameData.setGrid(grid);
 			//MainApp.mapButtonGrid(grid);
 			setBackgroundXWing();
-			ChangeButtonImage.changeBtnNull(currentLocation);
+			//ChangeButtonImage.changeBtnNull(currentLocation);
 			GameData.getPlayer().setCurrentLocation(btnIndex);
 		}
 	}
