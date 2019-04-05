@@ -49,6 +49,7 @@ public class GameButton extends JButton implements ActionListener {
 			//setBackgroundXWing();
 			ChangeButtonImage.changeBtnNull(currentLocation);
 			GameData.getPlayer().setCurrentLocation(btnIndex);
+			GameData.moveEnemyShips();
 			GameData.randomEnemyShip();
 		}
 	}

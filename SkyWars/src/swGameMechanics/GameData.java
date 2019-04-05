@@ -50,6 +50,11 @@ public class GameData {
 		MainApp.mapButtonGrid(grid);
 	}
 	
+	public static void moveEnemyShips() {
+		EnemyMovements.moveEnemies(grid, enemies);
+		MainApp.mapButtonGrid(grid);
+	}
+	
 	public static void initialLocationGenerator(Spaceship player) {
 		Random numGenerator = new Random();
 		int randLocation = numGenerator.nextInt(GRID_LENGTH);

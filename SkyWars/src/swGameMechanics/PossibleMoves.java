@@ -152,6 +152,62 @@ public class PossibleMoves {
 			add(14);
 		}
 	};
+	
+	public static ArrayList<Integer> getPossibleMoves(int currentLocation) {
+		ArrayList<Integer> possibleMoves = null;
+		switch(currentLocation) {
+			case 0:
+				possibleMoves = getBtn0Moves();
+				break;
+			case 1:
+				possibleMoves = getBtn1Moves();
+				break;	
+			case 2:
+				possibleMoves = getBtn2Moves();
+				break;	
+			case 3:
+				possibleMoves = getBtn3Moves();
+				break;	
+			case 4:
+				possibleMoves = getBtn4Moves();
+				break;	
+			case 5:
+				possibleMoves = getBtn5Moves();
+				break;	
+			case 6:
+				possibleMoves = getBtn6Moves();
+				break;	
+			case 7:
+				possibleMoves = getBtn7Moves();
+				break;	
+			case 8:
+				possibleMoves = getBtn8Moves();
+				break;	
+			case 9:
+				possibleMoves = getBtn9Moves();
+				break;	
+			case 10:
+				possibleMoves = getBtn10Moves();
+				break;	
+			case 11:
+				possibleMoves = getBtn11Moves();
+				break;	
+			case 12:
+				possibleMoves = getBtn12Moves();
+				break;	
+			case 13:
+				possibleMoves = getBtn13Moves();
+				break;	
+			case 14:
+				possibleMoves = getBtn14Moves();
+				break;	
+			case 15:
+				possibleMoves = getBtn15Moves();
+				break;	
+		}
+		return possibleMoves;
+	}
+	
 	public static ArrayList<Integer> getBtn0Moves() {
 		return btn0Moves;
 	}
