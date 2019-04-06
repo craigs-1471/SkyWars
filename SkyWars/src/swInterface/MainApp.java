@@ -15,6 +15,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class MainApp {
@@ -60,6 +61,164 @@ public class MainApp {
 		initialize();
 	}
 	
+	public static void mapButtonGridList(ArrayList<ArrayList<Spaceship>> gridList) {
+		if(gridList.get(0) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(0))) {
+				btnGameButton0.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(0))) {
+				btnGameButton0.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(1) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(1))) {
+				btnGameButton1.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(1))) {
+				btnGameButton1.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(2) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(2))) {
+				btnGameButton2.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(2))) {
+				btnGameButton2.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(3) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(3))) {
+				btnGameButton3.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(3))) {
+				btnGameButton3.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(4) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(4))) {
+				btnGameButton4.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(4))) {
+				btnGameButton4.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(5) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(5))) {
+				btnGameButton5.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(5))) {
+				btnGameButton5.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(6) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(6))) {
+				btnGameButton6.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(6))) {
+				btnGameButton6.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(7) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(7))) {
+				btnGameButton7.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(7))) {
+				btnGameButton7.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(8) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(8))) {
+				btnGameButton8.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(8))) {
+				btnGameButton8.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(9) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(9))) {
+				btnGameButton9.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(9))) {
+				btnGameButton9.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(10) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(10))) {
+				btnGameButton10.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(10))) {
+				btnGameButton10.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(11) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(11))) {
+				btnGameButton11.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(11))) {
+				btnGameButton11.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(12) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(12))) {
+				btnGameButton12.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(12))) {
+				btnGameButton12.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(13) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(13))) {
+				btnGameButton13.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(13))) {
+				btnGameButton13.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(14) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(14))) {
+				btnGameButton14.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(14))) {
+				btnGameButton14.setBackgroundBattleStar();
+			}	
+		}
+		if(gridList.get(15) != null) {
+			if(checkForInstanceOfPlayer(gridList.get(15))) {
+				btnGameButton15.setBackgroundXWing();
+			}
+			else if(checkForInstanceOfBattleStar(gridList.get(15))) {
+				btnGameButton15.setBackgroundBattleStar();
+			}	
+		}
+	}
+	
+	public static boolean checkForInstanceOfPlayer(ArrayList<Spaceship> list) {
+		 for (Spaceship s : list) {
+		        if (s instanceof MasterShip) {
+		            return true;
+		        }
+		    }
+		    return false;
+	}
+	
+	public static boolean checkForInstanceOfBattleStar(ArrayList<Spaceship> list) {
+		 for (Spaceship s : list) {
+		        if (s instanceof BattleStar) {
+		            return true;
+		        }
+		    }
+		    return false;
+	}
+	/*
+	public static void renderButtonGrid(GameButton btn, Spaceship ship) {
+		if(ship == null)
+			btn.setBackgroundNull();
+		if(ship instanceof MasterShip)
+			btn.setBackgroundXWing();
+		if(ship instanceof BattleStar)
+			btn.setBackgroundBattleStar();
+	}
+	
 	public static void mapButtonGrid(Spaceship[] grid) {
 		if(grid[0] != null)
 			renderButtonGrid(btnGameButton0, grid[0]);
@@ -103,7 +262,7 @@ public class MainApp {
 		if(ship instanceof BattleStar)
 			btn.setBackgroundBattleStar();
 	}
-
+	*/
 	/**
 	 * Initialize the contents of the frame.
 	 */

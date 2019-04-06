@@ -11,6 +11,7 @@ import swShips.Spaceship;
 public class GameData {
 	
 	private static final int GRID_LENGTH = 16;
+	private static ArrayList<ArrayList<Spaceship>> gridList;
 	private static Spaceship[] grid;
 	private static Spaceship player;
 	private static ArrayList<Spaceship> enemies;
@@ -18,7 +19,16 @@ public class GameData {
 	private static boolean usersGo;
 	
 	public static void playGame() {
-		grid = new Spaceship[GRID_LENGTH];
+		//grid = new Spaceship[GRID_LENGTH];
+		gridList = new ArrayList<ArrayList<Spaceship>>(GRID_LENGTH);
+		GridList.setGridList(gridList);
+		player = new MasterShip();
+		initialPlayerListLocation(player);
+		enemies = new ArrayList<Spaceship>();
+		gameOver = false;
+		usersGo = true;
+		MainApp.mapButtonGridList(gridList);
+		/*
 		for(int i = 0; i < GRID_LENGTH; i++) {
 			grid[i] = null;
 		}
@@ -29,8 +39,23 @@ public class GameData {
 		initialLocationGenerator(player);
 		System.out.println(player.getCurrentLocation());
 		MainApp.mapButtonGrid(grid);
+		*/
 	}
 	
+	public static void initialPlayerListLocation(Spaceship player) {
+		Random numGenerator = new Random();
+		int randLocation = numGenerator.nextInt(GRID_LENGTH);
+		gridList.get(randLocation).add(player);
+		player.setCurrentLocation(randLocation);
+	}
+	/*
+	public static void initialLocationGenerator(Spaceship player) {
+		Random numGenerator = new Random();
+		int randLocation = numGenerator.nextInt(GRID_LENGTH);
+		grid[randLocation] = player;
+		player.setCurrentLocation(randLocation);
+	}
+	*/
 	public static void randomEnemyShip() {
 		int possibleEnemy = 3; // i.e. one in three chance of spawning enemy
 		Random numGenerator = new Random();
@@ -45,25 +70,28 @@ public class GameData {
 		//int randNumber = numGenerator.nextInt(typesOfShip);
 		int randNumber = 1;
 		if(randNumber == 1) {
-			enemies.add(new BattleStar(grid));
+			gridList.get(0).add(new BattleStar());
+			//enemies.add(new BattleStar(grid));
 		}
-		MainApp.mapButtonGrid(grid);
+		MainApp.mapButtonGridList(gridList);
 	}
-	
+	/*
 	public static void moveEnemyShips() {
 		EnemyMovements.moveEnemies(grid, enemies);
 		MainApp.mapButtonGrid(grid);
 	}
+	*/
 	
-	public static void initialLocationGenerator(Spaceship player) {
-		Random numGenerator = new Random();
-		int randLocation = numGenerator.nextInt(GRID_LENGTH);
-		grid[randLocation] = player;
-		player.setCurrentLocation(randLocation);
-	}
-
 	public static Spaceship[] getGrid() {
 		return grid;
+	}
+
+	public static ArrayList<ArrayList<Spaceship>> getGridList() {
+		return gridList;
+	}
+
+	public static void setGridList(ArrayList<ArrayList<Spaceship>> gridList) {
+		GameData.gridList = gridList;
 	}
 
 	public static void setGrid(Spaceship[] grid) {

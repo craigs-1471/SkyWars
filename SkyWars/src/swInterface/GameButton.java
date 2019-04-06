@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import swGameMechanics.ChangeButtonImage;
 import swGameMechanics.GameData;
 import swGameMechanics.MoveVerification;
+import swShips.MasterShip;
 import swShips.Spaceship;
 
 public class GameButton extends JButton implements ActionListener {
@@ -39,8 +40,18 @@ public class GameButton extends JButton implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		int currentLocation = GameData.getPlayer().getCurrentLocation();
+		Spaceship player = GameData.getPlayer();
 		movePossible = MoveVerification.isMovePossible(currentLocation, possibleMoves);
 		if(GameData.isUsersGo() && movePossible) {
+			ArrayList<ArrayList<Spaceship>> gridList = GameData.getGridList();
+			gridList.get(currentLocation).remove(player);
+			gridList.get(btnIndex).add(player);
+			GameData.setGridList(gridList);
+			MainApp.mapButtonGridList(gridList);
+			GameData.getPlayer().setCurrentLocation(btnIndex);
+			ChangeButtonImage.changeBtnNull(currentLocation);
+			GameData.randomEnemyShip();
+			/*
 			Spaceship[] grid = GameData.getGrid();
 			grid[currentLocation] = null;
 			grid[btnIndex] = GameData.getPlayer();
@@ -51,6 +62,7 @@ public class GameButton extends JButton implements ActionListener {
 			GameData.getPlayer().setCurrentLocation(btnIndex);
 			GameData.moveEnemyShips();
 			GameData.randomEnemyShip();
+			*/
 		}
 	}
 
